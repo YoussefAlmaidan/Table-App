@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef's Table App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="top-bar">
+        <div id="new-table-icon" class="createTable" draggable="true" title="Drag & drop new table"><img src="icons/createTable.png" alt="Create Table"></div>
+        <input type="text" style="border: 2px solid #485265; border-radius: 16px 16px 16px 16px; background-color: #485265;" id="search-input" placeholder="Search tables...">
+    </div>
+    <div id="credits"><h5>Made by Youssef Almaidan</h5></div>
+    <div id="action-buttons">
+        <button onclick="undo()" title="Undo (Ctrl+Z)">
+            <img src="icons/undo3.png" alt="Undo" draggable="false">
+        </button>
+        <button onclick="redo()" title="Redo (Ctrl+Y)">
+            <img src="icons/redo3.png" alt="Redo" draggable="false">
+        </button>
+        <button onclick="addColumnToSelected()" title="Add column to selected (Ctrl+RightArrow)">
+            <img src="icons/addColumn.png" alt="Add Column" draggable="false">
+        </button>
+        <button onclick="addRowToSelected()" title="Add row to selected (Ctrl+DownArrow)">
+            <img src="icons/addRow.png" alt="Add Row" draggable="false">
+        </button>
+        <button onclick="deleteSelectedCell()" title="Clear selected cell (Ctrl+Del)">
+            <img src="icons/clearCell.png" alt="Delete Cell" draggable="false">
+        </button>
+        <button onclick="deleteSelectedColumn()" title="Delete selected column">
+            <img src="icons/deleteColumn.png" alt="Delete Column" draggable="false">
+        </button>
+        <button onclick="deleteSelectedRow()" title="Delete selected row">
+            <img src="icons/deleteRow.png" alt="Delete Row" draggable="false">
+        </button>
+        <button onclick="resetSelectedTable()" title="Reset selected table (ctrl+~)">
+            <img src="icons/resetTable.png" alt="Reset Table" draggable="false">
+        </button>
+        <button onclick="exportSelectedTableToCSV()" title="Export selected table to .CSV">
+            <img src="icons/exportCSV.png" alt="Export to CSV" draggable="false">
+        </button>
+    </div>
+    <div id="quadrant-container">
+        <div class="quadrant" style="border-top: 4px solid #313C51;" id="quadrant1">
+            <button class="clear-btn" onclick="clearQuadrant('quadrant1')" title="Delete Table"><img draggable="false" src="icons/deleteTable.png" alt="Clear"></button>
+        </div>
+        <div class="quadrant" style="border-top: 4px solid #313C51;" id="quadrant2">
+            <button class="clear-btn" onclick="clearQuadrant('quadrant2')" title="Delete Table"><img draggable="false" src="icons/deleteTable.png" alt="Clear"></button>
+        </div>
+        <div class="quadrant" id="quadrant3">
+            <button class="clear-btn" onclick="clearQuadrant('quadrant3')" title="Delete Table"><img draggable="false" src="icons/deleteTable.png" alt="Clear"></button>
+        </div>
+        <div class="quadrant" id="quadrant4">
+            <button class="clear-btn" onclick="clearQuadrant('quadrant4')" title="Delete Table"><img draggable="false" src="icons/deleteTable.png" alt="Clear"></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

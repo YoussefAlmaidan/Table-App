@@ -1,0 +1,369 @@
+
+body, html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    background-color: #19212E;
+}
+
+#credits {
+    align-self: center;
+    color: #ffffff;
+    opacity: 0.2;
+}
+
+.createTable {
+    height: 32px;
+    width: 32px;
+    position: relative;
+}
+
+#top-bar {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    border: 2px solid #485265;
+    border-radius: 16px 16px 16px 16px;
+    background-color: #485265;
+}
+
+#new-table-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#search-input {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+#action-buttons {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    z-index: 1000;
+    border: 2px solid #485265;
+    border-radius: 16px 16px 16px 16px;
+    background-color: #485265;
+}
+
+#action-buttons button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#action-buttons button::before {
+    content: '';
+    position: absolute;
+    right: -7px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #485265;
+}
+
+#action-buttons button:last-child::before {
+    display: none;
+}
+
+#action-buttons button:hover img {
+    filter: brightness(0.8);
+}
+
+#action-buttons img {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes scaleOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-out {
+    animation: scaleOut 0.7s forwards;
+}
+
+.scale-in {
+    animation: scaleIn 0.7s forwards;
+}
+
+
+ @-webkit-keyframes swingIn {
+    0% {
+      -webkit-transform: translateY(-1000px) translateX(-1000px);
+              transform: translateY(-1000px) translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes swingIn {
+    0% {
+      -webkit-transform: translateY(-1000px) translateX(-1000px);
+              transform: translateY(-1000px) translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+      opacity: 1;
+    }
+  }
+  
+
+.swing-in {
+    animation: swingIn 0.5s ease;
+}
+@-webkit-keyframes slideOut {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+  }
+  @keyframes slideOut {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+  }
+  
+  
+
+.slide-out {
+    animation: slideOut 1s ease forwards;
+}
+
+
+@keyframes buttonClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.70);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button-click img {
+    animation: buttonClick 0.2s ease;
+}
+
+#quadrant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: calc(100% - 50px);
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #273246;
+}
+
+.quadrant {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    margin-right: 10px;
+    border: 2px solid #485265;
+    border-radius: 200px 200px 200px 200px;
+    background-color: #485265;
+    box-shadow: 0px 7px 15px -1px rgba(0,0,0,0.44);
+}
+
+.clear-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.clear-btn:hover img {
+    filter: brightness(0.8);
+}
+
+.clear-btn.button-click img {
+    animation: buttonClick 0.2s ease;
+}
+
+.resizer {
+    position: absolute;
+    background: #313C51;
+    z-index: 1;
+}
+
+.resizer.horizontal {
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    cursor: ns-resize;
+}
+
+.resizer.vertical {
+    width: 2px;
+    height: 100%;
+    right: -5px;
+    cursor: ew-resize;
+}
+
+#quadrant1 .resizer {
+    bottom: 0;
+    right: 0;
+}
+
+#quadrant2 .resizer {
+    bottom: 0;
+    left: 0;
+}
+
+#quadrant3 .resizer {
+    top: 0;
+    right: 0;
+}
+
+#quadrant4 .resizer {
+    top: 0;
+    left: 0;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0px 7px 15px -1px rgba(0,0,0,0.44);
+}
+
+th, td {
+    border: 1px solid #11151C;
+    padding: 8px;
+    width: 50px;
+    height: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #364156;
+    color: #bcc5d6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+td {
+    text-align: left;
+    background-color: #bcc5d6;
+}
+
+td.editable-header {
+    background-color: #364156;
+    text-align: center;
+    color: #bcc5d6;
+}
+
+input.edit-input {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+}
+
+.selected {
+    background-color: rgb(223, 221, 255);
+}
+
+
+th.selected,
+td.selected {
+    background-color: rgb(223, 221, 255)d;
+}
+
+.highlight {
+    background-color: rgb(94, 51, 247);
+}
+
+.scrollable-horizontal {
+    overflow-x: auto;
+}
+
+.fitted {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.fitted table {
+    width: 90%;
+    height: 90%;
+    table-layout: fixed;
+}
